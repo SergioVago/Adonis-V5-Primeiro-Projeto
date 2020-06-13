@@ -9,6 +9,12 @@ export default class Posts extends BaseSchema {
       table.string('title')
       table.string('content')
       table.timestamps(true)
+
+      table
+        .integer('user_id')
+        .references('id')
+        .inTable('users')
+        .onDelete('CASCADE')
     })
   }
 
